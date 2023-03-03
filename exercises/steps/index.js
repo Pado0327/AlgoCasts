@@ -19,31 +19,21 @@
 
 function steps(n) {
   debugger;
-  // find prime value -- 2n - 1
-  //find middle value -- m.
-  // interate based on paramter (n)
-  // set min and max based on middle (+-index - 1)
-  // interate based on prime value
-  // if(min <= index <= max)  += #
-  // else += ' ';
-
-  const prime = 2 * n - 1;
-  const medium = Math.ceil(prime / 2);
-  let pyramid = '';
-
   for (let i = 0; i < n; i++) {
-    let min = medium - i;
-    let max = medium + i;
-
-    for (let j = 0; j < prime; j++) {
-      if (min <= j && j <= max) {
-        pyramid += '#';
-      } else {
-        pyramid += ' ';
-      }
+    let str = '';
+    let j = 0;
+    let k = i;
+    while (j < i + 1) {
+      str += '#';
+      j++;
     }
 
-    console.log(pyramid);
+    while (k + 1 < n) {
+      str += ' ';
+      k++;
+    }
+
+    console.log(str);
   }
 }
 
